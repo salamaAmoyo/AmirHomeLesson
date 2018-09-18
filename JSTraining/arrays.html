@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+
+		var Numbers = [1,2,3,4,5,6,7,8,9];
+		
+		
+		function printNumber( num ) {
+			console.log( num );
+		}
+		
+		function printArray( arr ) {
+			
+//			for(var i=0; i < arr.length; i++) {
+//				console.log( arr[i] );
+//			}
+			
+			
+			//	In JavaScript we can run through an array using the for-in loop
+			//	The for-in loop automatically goes thruogh the index starting from 0 to length-1
+			
+			//	for( index in arr )
+			//		console.log( arr[ index ] );
+				 
+			
+			//	We can use the .forEach() method, method means a dedicated function of an object
+			//	.forEach() takes a function as a parameter.
+			//	.forEach() goes over every item in the array and call the function with the item value
+			
+			arr.forEach( printNumber );	
+			
+			//	We've already defined printNumner(num) to take a number
+			//	in this case, .forEach() takes an item from the array and pass it to printNumber( valueFrom_forEach )
+			
+			//	In other words, we ask .forEach() to take every item from that array
+			//	and passit to the printNumber
+			
+			
+			//	Should we have defined a function before using .forEach() ?
+			//	No. We can use anonymous function
+			
+			arr.forEach( function(value) {
+				console.log (value);
+			} );
+		}
+		
+		printArray( Numbers );
+		
+    
+    </script>
+</head>
+
+<body>
+
+
+</body>
+</html>

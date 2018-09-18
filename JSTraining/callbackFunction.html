@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head> </head>
+<body>
+	<p id="demo"></p>
+	<script>
+//	function add(a,b){
+//	  return a+b;	
+//	}
+//		
+//		function mul(a,b){
+//	  return a*b;	
+//	}
+//		
+  function callme(n1,n2,doMath){
+	 if(doMath==="mul"){ 
+	 return n1*n2;
+  }else if(doMath==="add"){return n1+n2;}
+	  
+  }
+	document.getElementById("demo").innerHTML=(callme(5,5,"add"));
+	 
+	</script>
+</body>
+
+</html>

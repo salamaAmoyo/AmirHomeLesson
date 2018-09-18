@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <script>
+        
+        //  Variables and "hold" values - simple values like text or numbers
+        var x = 5;
+        var y = 'Hello';
+        
+        var z = 'Hello World';
+
+        //  Variables can also hold multiple values in an Array
+        var colors = ['red','green','blue'];    //  It's called Array
+        
+        console.log(colors[0]); //  red
+        console.log(colors[1]); //  green
+        
+        
+        //  Variables can also hold multiple values in an object
+        var myFriend = { name: 'Alex', age: 25, phone:"052-123456"} // It's called JSON
+        
+        console.log(myFriend["name"]);  //  Alex
+        console.log(myFriend["phone"]); //  052-123456
+        
+        var i = "age";
+        
+        console.log(myFriend[i]);       //  25
+        console.log(myFriend[name]);    //  undefined, because name is a variable that has not been declared.
+        
+        //  Also..
+        console.log(myFriend.name);     //  Alex  - In this notation, name is a key NOT a variable (only inside myFriend it's a variable)
+        console.log(myFriend.i);        //  NOT equivelent to myFriend.age
+        
+        
+        //  Add further details to a JSON
+        myFriend.email = 'alex@gmail.com';
+        
+        
+        //  Add further details to an Array
+        colors[3] = 'white';
+        //colors[3] = 'yellow';   //  yellow will replace white
+        
+        colors[ colors.length ] = 'purple'; // add 'purple' to the last place, colors[4]
+        colors[ colors.length ] = 'gray';   // add 'grey' to the last place, colors[5]
+        colors[ colors.length ] = 'pink';   // add 'pink' to the last place, colors[6]
+        colors[ colors.length ] = 'black';  // add 'blank' to the last place, colors[7]
+        
+        //  Go to the browser, open the Web Console and try to figure out what colors contain
+        
+        
+        //  Working with indexes might be confusing, that why JS offeres 
+        //  an easy way to add values to an array
+        colors.push( 'orange' );
+        
+        
+        
+        //  Variables can also hold a combination of JSON and Arrays
+        //  Example
+        myFriend.habits = ['reading','swimming'];
+        
+        console.log(myFriend);
+        
+        
+        
+        //  References
+        
+        var colors1 = colors;
+        var colors2 = colors;
+        
+        
+        //  Add another color to colors2
+        colors2.push('brown');
+        
+        //   how many colors are in the array colors1
+        console.log(colors1.length);    //   Will be AS SAME AS colors2
+        //  because both are "References" to the same array
+        
+        //  How many arrays of colors do we have?
+        //  ONE!
+        //  Three "References" are referening to that same ONE array - colors, colors1 and colors2
+        
+        
+        //  Again:
+        
+        var car1 = { model: 'Fiat', color: 'red'};
+        var car2 = car1;
+        
+        //  How many objects do we have?
+        //  Only one
+        //  car1 and car2 are "References" of the SAME object
+        
+        
+        //  Changing any property of the object through one reference
+        
+        car2.model = 'Opel';
+        car2.color = 'green';
+        
+        //  Will be directly affected through the other reference
+        
+        console.log(car1.model);    //  Opel
+        console.log(car1.color);    //  green
+        
+        
+        //  Let's change car2
+        car2 = { model: 'Jeep', color: 'black' };
+        
+        //  Will that affect car1?
+        console.log(car1.model);    //  Opel
+        console.log(car1.color);    //  green
+        
+        //  Why?
+        //  Because we have ASSIGNED a new object to car2
+        //  car1 and car2 are now references to different objects
+        
+        //  Pay attention to:
+        //  1. simple values like texts and numbers - Premetive
+        //  2. "complicated" values, like arrays and JSON
+        //  3. Differences between arrays and { JSON } - Why do we use Arrays, when do we use JSONs
+        //  4. The combination between Arrays and JSONS
+        //  5. Adding values to Arrays and JSONS
+        //  6. References
+        //  7. Working with the Web Console
+        
+        
+        
+        
+
+        
+    </script>
+    
+</head>
+
+<body>
+    
+</body>
+</html>

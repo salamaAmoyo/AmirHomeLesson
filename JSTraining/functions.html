@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function</title>
+    <script>
+    
+        function sayHello() {
+            alert('Hello Salama!');
+        }
+        
+        // Reference of a function
+        // sayHello is just a reference to that function
+        // if we want to invoke that function we should add () 
+        // example:   sayHello()
+        
+        //  More about References of functions
+        var myFunction = sayHello;
+        
+        //  myFunctions is now a reference to the sayHello function
+        //  we can invoke the sayHello function by invoking myFunction as following:
+        myFunction();
+        
+        //  Functions can "take" values, we call values as "parameters"
+        
+        function sayHi( whoever ) {
+            alert('Hello ' + whoever); 
+            
+            // whoever is a parameter. treat as it was a variable inside the function
+            // whoever will be passed when the function is invoked
+        }
+        
+        // When we want to invoke sayHi() we have to "pass" a value
+        
+        sayHi("Salama");
+        sayHi("Amir");
+        //sayHi(Salama);
+        
+        
+        // Functions can also "return" something (it could be a number, text, array, object and etc)
+        function getLegalAge(){
+            return 18;
+        }
+        
+        
+        //  When we call the function getLegalAge()
+        //  the value 18 will be returned 
+        //  however, returned to whom?
+        
+        //  one option is to store the returned value into a variable
+        var x = getLegalAge();
+        console.log(x); // 18  
+        
+        
+        //  option two, would passing the returned value to an other function
+        //   that is capable of "receiving" values
+        
+        sayHi( getLegalAge() ); 
+        // getLeaglAge() will run first, the returned value will be passed to sayHi()
+        
+        
+        
+        //  Function can also take and return values at the same time
+        function multiply(x,y){
+            return x * y;
+        }
+        
+        console.log( multiply(3,5) );
+        
+        
+        // More of the same:
+        //  sayShalom "takes" a value and call it somebody
+        //  sayShalom "returns" a value called greeting
+        
+        function sayShalom( somebody ) {
+            
+            var greeting = "Shalom " + somebody;
+            
+            return greeting;
+        }
+        
+        //  When we call a function we are NOT bound to the names of 
+        //  the parameters or its variables, but to the amount of 
+        //  parameters it takes, and the type of data it returns
+        
+        var expectedGreeting = sayShalom("Peter");  // var expectedGreeting = "Shalom Peter";
+        
+        //  from this line on, we can use the vriable 'expectedGreeting'
+        //  example
+        console.log( expectedGreeting );
+        
+        
+        //  Excercises: (In a separate file)
+        //  1. Write a function that takes two numbers and returns the sum
+        //  2. Write a function that takes two numbers and returns the max (with if, not MATH)
+        //  3. Write a function that takes an array of numbers and returns the average
+        //  4. Write a function that takes an array of numbers and returns only even numbers (use Array to return)
+        
+        
+        
+        
+        
+        
+        //----------------//
+        //  STOP HERE !!! //
+        //----------------//
+        
+        
+        
+        
+        
+        
+        
+        //  CALLBACK FUNCTIONS
+        function doAlotOfWork(data, whatEverFunction) {
+            
+            //  Do something complicated
+            //  that might take a lot of time
+            
+            //  finally when you're done, call the whatEverFunction
+            //  by adding ()
+            
+            whatEverFunction();
+            
+        }
+        
+        doAlotOfWork("Salama",sayHello);    //  We ask doAlotWork to call sayHello when it's done
+        doAlotOFWork("Amir",getLegalAge);   //  this time, we ask it to call getLegalAgeS
+        
+        //  What doAlotOfWork has something to return?
+        //  Does it keep working same way? NO. But Almost.
+        
+        function doHardWork(data, callback) {
+            
+            //  Do something really hard
+            
+            var result = "Salama";
+            
+            //  instead of 'return result'; we invoke the callback function
+            //  and pass a variable to it. This way:
+            
+            callback(result);
+        }
+        
+        //  And, how do we call doHarWork??
+        
+        doHardWork("neverMind",sayHi);  
+        //  we call doHardWork, and we ask it to call sayHi when it's done
+        //  sayHi is expeting a value to be passed to it
+        //  and that value was actually passed, when doHardWork called callback(result)
+        //  in other words, the value that was passed to sayHi is the value that result holds
+        
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+    //  1. Write a function that takes two numbers and returns the sum
+        function add(n,m){
+            return n+m;
+        }
+        add(5,5); //answer 10
+		
+        //  2. Write a function that takes two numbers and returns the max (with if, not MATH)  
+		
+        function max(n,m){
+         
+        if(m>n)
+            return m+"is larger";
+         
+        else
+            return n+"is bigger";
+            
+        }
+        max(5,9); 	//Answer 9 is larger
+		max(7,3);	//	7 is larger
+        
+		//  3. Write a function that takes an array of numbers and returns the average
+        function Average( arr ){
+        
+            var sum=0; 
+			var average; 
+			
+			for(i=0;i<arr.length;i++) 
+				sum+=arr[i]; 
+			
+			average=(sum/arr.length); 
+			
+          	return average;       
+        }
+		
+		
+        var answer = Average( [1,2,3,4,5] );
+		console.log( answer );
+		
+		var myNumbers = [10,10,9,10];
+		console.log(  Average( myNumbers )   );
+		
+		
+		//	Following are grades of two classes:
+		
+		var class1 = [ 75, 65, 80, 100, 95 ];
+		var class2 = [ 80, 78, 99, 92, 50 ];
+		
+		//	What is the highest avarage?
+        
+		
+		var class1Aver=Average(class1);
+		var class2Aver=Average(class2);
+		var maxresult=max(class1Aver,class2Aver);
+		console.log(maxresult);
+		 
+		
+		console.log(max(Average(class1),Average(class2)));
+	
+		 //  4. Write a function that takes an array of numbers and returns only even			
+		 	//  Homework:   
+			//	a. Fix Event() - it must "TAKE" an array
+			//	b. Use for-in
+			//	c. Use forEach - with a predefined function
+			//	d. Use forEach - with an anonymous function
+		     //  var count=[1,2,3,4,5,6,7,8,9,10];
+		
+		
+        function Even(arr){
+		
+			if(arr.push == undefined) {
+				// arr is not an array
+				console.error('Even expectes an array');
+				return;
+			}
+		
+        	var result=[]; 
+        	var add=0;    
+            for(x in arr){
+               if(arr[x]%2==0){
+                result.push(arr[x]); 
+               } 
+             }
+			return result;
+           
+        }
+		
+		console.log( Even( [1,2,3,4,5,6,7] ) );
+		
+		//console.log(Even([10,15,20,21]));
+       
+		
+		//-----------------------------------
+		
+		
+    	var list=[1,2,3,4,5,6,7,8,9,10];
+		var Even=[];	
+		
+		function addToEvenArray( number ){
+		
+				if(number%2==0){
+					Even.push(number);
+				}
+		}
+    
+        list.forEach( addToEvenArray );
+		console.log( 'Even array is ', Even);
+		
+		//----------------------------------
+		
+		
+		
+		console.log(Even);
+       
+        /*Use forEach - with a predefined function*/
+         var even_numbers = [];
+        function select_evens(item) {
+            if (item % 2==0 ) {
+               even_numbers.push(item);
+            }
+            
+        }
+         [1, 2, 3, 4, 5, 6,7,8,9,10].forEach(select_evens);
+ 
+        console.log("this is from predefined function :"+ even_numbers);
+        
+    
+		/* Use forEach - with an anonymous function*/
+		
+		var numbers=[];
+       
+          [10, 7, 80, 5, 9, 60,11,40,13].forEach(function(arr){
+			if(arr%2==0) {
+			numbers.push(arr);	 
+			} 
+		  });
+ 
+        console.log("this is from anonymous function :"+ numbers);
+		
+    </script>
+</head>
+
+<body>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+	<script>
+		/* var count=[1,2,3,4,5,6,7,8,9,10];
+	  function Even(arr){
+        var result=[]; 
+        var add=0;    
+        
+             for(x in arr){
+               if(arr[x]%2==0){
+                result.push(arr[x]);
+				  document.getElementById("demo").innerHTML=result; 
+               }  
+			 
+			   
+             }
+		
+           
+        }
+	  Even(count);
+		*/
+	</script>
+</body>
+</html>
